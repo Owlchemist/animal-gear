@@ -1,0 +1,10 @@
+Technical details on changes made
+- The removing of hugslib. This put all the settings (half-dozen bools and 1 enum) into the AnimalGearSettings class. These fields no longer need to be accessed through a wrapper or require null checks, being non-nullable values. The mod options UI was written up vanilla-style. The map loader helper hugslib method was moved to a harmony patch map init.
+- This left the controller class nearly empty so whatever was leftover was pushed to the helper class.
+- The mod compatibility patches ran some logic to check if they should run or not. This was moved to the harmony Prepare() classes.
+- Other one-time constructor events are now in the mod constructor itself (AnimalGearMod).
+- Reviewing the use of try/catch, some of them were removed where deemed either 1.) unneccessary due to code that could never fail or 2.) too expensive or otherwise overly cautious. Generally try/catches are left out rapidly called methods (ticks and updates) and you'll rather see them in periodic methods or manually intiated calls. Sanity should instead be handled through return conditions.
+- Some null checks were removed if the logic determined a null could never happen based on the upstream stack. Null checks are not free and add overhead.
+- The render mode enum casting was removed. It all gets compiled into its int form anyway.
+
+- Of special note, the PawnRenderer_RenderAsPack_Patch patch was disabled. It does not work for reasons I could not deduce, although simply removing it did not seem to yield any consequence far as I could tell. May need another set of eyes on ths one to determine what's up. By "not working" I mean: If you install Research Reinvented and spawn in a simple field research kit and have a pawn wear it, it will cause a purple texture glitch (this kit is a pack). Curiously, even if you change to Postfix to do absolutely nothing, just a 1-line return and nothing more, the problem remains. Removing the patch altogether works fine, though.

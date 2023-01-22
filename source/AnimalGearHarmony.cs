@@ -820,6 +820,10 @@ namespace AnimalGear
 		[HarmonyPatch(typeof(PawnRenderer), nameof(PawnRenderer.RenderAsPack))]
 		static class PawnRenderer_RenderAsPack_Patch
 		{
+			static bool Prepare()
+			{
+				return false; //Temporarily disable patch
+			}
 			static bool Postfix(bool __result, Apparel apparel)
 			{
 				bool flag = false;

@@ -11,9 +11,9 @@ namespace AnimalGear
 		public AnimalGearMod(ModContentPack content) : base(content)
 		{
 			base.GetSettings<AnimalGearSettings>();
-			AnimalGearHarmony.PawnRenderer_RenderPawnAt_Transpiler_Patch.renderMode = AnimalGearRenderMode;
 			AnimalGearHarmony.InitModOn();
 			new Harmony("AnimalGear").PatchAll();
+			AnimalGearHarmony.PawnRenderer_RenderPawnAt_Transpiler_Patch.renderMode = AnimalGearRenderMode;
 		}
 
 		public override void DoSettingsWindowContents(Rect inRect)
