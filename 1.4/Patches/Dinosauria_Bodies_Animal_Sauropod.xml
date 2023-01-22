@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Dinosauria</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]/corePart/groups|/Defs/BodyDef[defName="Sauropod"]//li[def="Spine" or def="Stomach" or def="Heart" or def="Lung" or def="LeftKidney" or def="RightKidney" or def="Kidney" or def="Liver"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]/corePart|/Defs/BodyDef[defName="Sauropod"]//li[def="Spine" or def="Stomach" or def="Heart" or def="Lung" or def="LeftKidney" or def="RightKidney" or def="Kidney" or def="Liver"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Dinosauria</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]/corePart/groups|/Defs/BodyDef[defName="Sauropod"]//li[def="Spine" or def="Stomach" or def="Heart" or def="Lung" or def="LeftKidney" or def="RightKidney" or def="Kidney" or def="Liver"]/groups</xpath>
+				<value>
+					<li>Torso</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]/corePart/groups</xpath>
+				<value>
+					<li>Waist</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Dinosauria</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[def="Neck"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[def="Neck"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Dinosauria</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[def="Neck"]/groups</xpath>
+				<value>
+					<li>Neck</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[def="Head"]/groups</xpath>
+				<value>
+					<li>UpperHead</li>
+					<li>FullHead</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Dinosauria</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[def="Skull" or def="Brain"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[def="Skull" or def="Brain"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Dinosauria</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[def="Skull" or def="Brain"]/groups</xpath>
+				<value>
+					<li>UpperHead</li>
+					<li>FullHead</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Dinosauria</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[def="Eye"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[def="Eye"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Dinosauria</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[def="Eye"]/groups</xpath>
+				<value>
+					<li>FullHead</li>
+					<li>Eyes</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Dinosauria</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[def="Nose"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[def="Nose"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Dinosauria</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[def="Nose"]/groups</xpath>
+				<value>
+					<li>FullHead</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[def="AnimalJaw"]/groups</xpath>
+				<value>
+					<li>FullHead</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Dinosauria</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[customLabel="rear right leg" or customLabel="rear left leg"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[customLabel="rear right leg" or customLabel="rear left leg"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Dinosauria</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Sauropod"]//li[customLabel="rear right leg" or customLabel="rear left leg"]/groups</xpath>
+				<value>
+					<li>Legs</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThinkTreeDef>
+		<defName>AnimalGear</defName>
+		<insertTag>Animal_PreWander</insertTag>	
+		<thinkRoot Class="ThinkNode_Priority">
+		  <subNodes>
+			<!-- Tame animal -->
+			<li Class="ThinkNode_ConditionalOfPlayerFaction">
+			  <subNodes>
+				<!-- Optimize apparel like human-->
+				<li Class="ThinkNode_Tagger">
+				  <tagToGive>ChangingApparel</tagToGive>
+				  <subNodes>
+					<li Class="JobGiver_OptimizeApparel">
+					  <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+					</li>
+				  </subNodes>
+				</li>
+			  </subNodes>
+			</li>
+		  </subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
+
+</Defs>

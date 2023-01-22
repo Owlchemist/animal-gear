@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<JobDef>
+		<defName>AnimalGearOpenStylingStationDialog</defName>
+		<driverClass>AnimalGear.AnimalGear_JobDriver_OpenStylingStationDialog</driverClass>
+		<reportString>changing style at TargetA. (animal)</reportString>
+	</JobDef>
+</Defs>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<LanguageData>
+
+	<AnimalGearRenderMode_Title>Render Modus</AnimalGearRenderMode_Title>
+	<AnimalGearRenderMode_Desc>Verändert wie Tiere mit Kleidung gezeichnet werden (beeinflusst Performance und möglicherweise Kompatibilität - der automatische Modus nutzt normal den neuen Modus(bessere Perfomance), ähnlich zu Personen in 1.3 und wechselt in den alten Modus, wenn rausgezoomed wird um eventuelle grafische Artefakte bei großen Tieren zu vermeiden)</AnimalGearRenderMode_Desc>
+
+	<AnimalGearRenderMode_Desc_AutoMixed>Auto gemischt</AnimalGearRenderMode_Desc_AutoMixed>
+	<AnimalGearRenderMode_Desc_FallbackRenderPawnInternal>Nur alter Modus</AnimalGearRenderMode_Desc_FallbackRenderPawnInternal>
+	<AnimalGearRenderMode_Desc_NewMeshMode>Nur neuer Modus</AnimalGearRenderMode_Desc_NewMeshMode>
+	<AnimalGearRenderMode_Desc_Off>Aus: Unsichtbare Kleidung</AnimalGearRenderMode_Desc_Off>
+
+	<AnimalGearFallbackToEmptyTextureEnabled_Title>Fallback zu leerer Grafik</AnimalGearFallbackToEmptyTextureEnabled_Title>
+	<AnimalGearFallbackToEmptyTextureEnabled_Desc>Fallback zu einer generischen leeren Grafik, wenn keine Tier-spezifische Grafik gefunden wurde.</AnimalGearFallbackToEmptyTextureEnabled_Desc>
+	
+	<AnimalGearReplaceLegacyGearWithNewVariantEnabled_Title>Veraltete Mod-Ausrüstung automatisch ersetzen</AnimalGearReplaceLegacyGearWithNewVariantEnabled_Title>
+	<AnimalGearReplaceLegacyGearWithNewVariantEnabled_Desc>Beim laden der Map, wenn aktiviert (siehe Änderungslog für Details)</AnimalGearReplaceLegacyGearWithNewVariantEnabled_Desc>
+	
+	<AnimalGearRPGInventoryAnimalCompatibilityEnabled_Title>Zeige 'RPG-Style Inventory' für Tiere</AnimalGearRPGInventoryAnimalCompatibilityEnabled_Title>
+	<AnimalGearRPGInventoryAnimalCompatibilityEnabled_Desc></AnimalGearRPGInventoryAnimalCompatibilityEnabled_Desc>
+	
+	<AnimalGearDraftedForceWearEnabled_Title>Aktiviere 'Bekleiden'-Option für Tiere im Kampfmodus</AnimalGearDraftedForceWearEnabled_Title>
+	<AnimalGearDraftedForceWearEnabled_Desc>Braucht eine Mod wie 'Draftable animals', welche den Kampfmodus für Kolonie-Tiere freischaltet</AnimalGearDraftedForceWearEnabled_Desc>
+	<AnimalGearDraftedForceWearOnlyCarryTrainedEnabled_Title>Limit. 'Bekleiden'-Option auf 'Tragen' trainierte</AnimalGearDraftedForceWearOnlyCarryTrainedEnabled_Title>
+	<AnimalGearDraftedForceWearOnlyCarryTrainedEnabled_Desc></AnimalGearDraftedForceWearOnlyCarryTrainedEnabled_Desc>
+	
+	<AG_Disabled>Option deaktiviert</AG_Disabled>
+	<AG_NotTrained>nicht trainiert in 'Tragen'</AG_NotTrained>
+	
+</LanguageData>

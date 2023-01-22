@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Race to the Rim</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]/corePart/groups|/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[def="Spine" or def="Stomach" or def="Heart" or def="Lung" or def="Kidney" or def="Liver"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]/corePart|/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[def="Spine" or def="Stomach" or def="Heart" or def="Lung" or def="Kidney" or def="Liver"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Race to the Rim</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]/corePart/groups|/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[def="Spine" or def="Stomach" or def="Heart" or def="Lung" or def="Kidney" or def="Liver"]/groups</xpath>
+				<value>
+					<li>Torso</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]/corePart/groups</xpath>
+				<value>
+					<li>Waist</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Race to the Rim</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[def="Neck"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[def="Neck"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Race to the Rim</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[def="Neck"]/groups</xpath>
+				<value>
+					<li>Neck</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[def="Head"]/groups</xpath>
+				<value>
+					<li>UpperHead</li>
+					<li>FullHead</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Race to the Rim</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[def="Skull" or def="Brain"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[def="Skull" or def="Brain"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Race to the Rim</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[def="Skull" or def="Brain"]/groups</xpath>
+				<value>
+					<li>UpperHead</li>
+					<li>FullHead</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Race to the Rim</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[def="Eye"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[def="Eye"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Race to the Rim</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[def="Eye"]/groups</xpath>
+				<value>
+					<li>FullHead</li>
+					<li>Eyes</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Race to the Rim</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[customLabel="front left leg"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[customLabel="front left leg"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Race to the Rim</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[customLabel="front left leg"]/groups</xpath>
+				<value>
+					<li>Legs</li>
+					<li>FrontLeftLeg</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Race to the Rim</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[customLabel="front right leg"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[customLabel="front right leg"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Race to the Rim</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[customLabel="front right leg"]/groups</xpath>
+				<value>
+					<li>Legs</li>
+					<li>FrontRightLeg</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Race to the Rim</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[customLabel="rear left leg" or customLabel="rear right leg"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[customLabel="rear left leg" or customLabel="rear right leg"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Race to the Rim</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_WingedQuadrupedAnimalWithPawsAndTail" or defName="RttR_QuadWingedQuadrupedAnimalWithPawsAndTail"]//li[customLabel="rear left leg" or customLabel="rear right leg"]/groups</xpath>
+				<value>
+					<li>Legs</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+</Patch> 

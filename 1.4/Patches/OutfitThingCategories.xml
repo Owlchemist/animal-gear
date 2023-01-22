@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>/ThingDef[count(apparel/tags/li[contains(text(), "Animal")])>=1]/thingCategories/li[contains(text(), "Apparel")]</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[count(apparel/tags/li[contains(text(), "Animal")])>=1]/thingCategories/li[contains(text(), "Apparel")]/text()</xpath>
+				<value>
+					<thingCategories>Animal_Apparel</thingCategories>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+</Patch> 

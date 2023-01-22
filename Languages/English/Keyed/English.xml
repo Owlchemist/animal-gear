@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	
+	<AnimalGearRenderMode_Title>Render mode:</AnimalGearRenderMode_Title>
+	<AnimalGearRenderMode.AutoMixed> - Auto mixed</AnimalGearRenderMode.AutoMixed>
+	<AnimalGearRenderMode.FallbackRenderPawnInternal> - Fallback mode</AnimalGearRenderMode.FallbackRenderPawnInternal>
+	<AnimalGearRenderMode.NewMeshMode> - New mesh mode</AnimalGearRenderMode.NewMeshMode>
+	<AnimalGearRenderMode.Off> - Off</AnimalGearRenderMode.Off>
+	<AnimalGearRenderMode_Desc>Can be used to change how animals with gear/clothes are rendered (influences performance and possibly compatibility - Auto mode normally uses the new render mode(better performance), similar to colonists in 1.3 and switches to fallback-mode when zoomed out to limit possible flicker on larger animals)</AnimalGearRenderMode_Desc>
+	
+	<AnimalGearRenderMode_Desc_AutoMixed>Auto mixed</AnimalGearRenderMode_Desc_AutoMixed>
+	<AnimalGearRenderMode_Desc_FallbackRenderPawnInternal>Fallback mode only</AnimalGearRenderMode_Desc_FallbackRenderPawnInternal>
+	<AnimalGearRenderMode_Desc_NewMeshMode>New mode only</AnimalGearRenderMode_Desc_NewMeshMode>
+	<AnimalGearRenderMode_Desc_Off>Turn off: Invisible gear</AnimalGearRenderMode_Desc_Off>
+	
+	<AnimalGearFallbackToEmptyTextureEnabled_Title>Fallback to empty texture</AnimalGearFallbackToEmptyTextureEnabled_Title>
+	<AnimalGearFallbackToEmptyTextureEnabled_Desc>Fallback to a generic empty texture if no animal specific one is found</AnimalGearFallbackToEmptyTextureEnabled_Desc>
+	
+	<AnimalGearReplaceLegacyGearWithNewVariantEnabled_Title>Automatically replace legacy mod gear</AnimalGearReplaceLegacyGearWithNewVariantEnabled_Title>
+	<AnimalGearReplaceLegacyGearWithNewVariantEnabled_Desc>On map load if confiured (see changenotes for details)</AnimalGearReplaceLegacyGearWithNewVariantEnabled_Desc>
+	
+	<AnimalGearRPGInventoryAnimalCompatibilityEnabled_Title>Show 'RPG-Style Inventory' for faction animals</AnimalGearRPGInventoryAnimalCompatibilityEnabled_Title>
+	<AnimalGearRPGInventoryAnimalCompatibilityEnabled_Desc></AnimalGearRPGInventoryAnimalCompatibilityEnabled_Desc>
+	
+	<AnimalGearDraftedForceWearEnabled_Title>Enable 'Force wear'-option for drafted animals</AnimalGearDraftedForceWearEnabled_Title>
+	<AnimalGearDraftedForceWearEnabled_Desc>Needs a mod like 'Draftable animals', which enables drafting for animals</AnimalGearDraftedForceWearEnabled_Desc>
+	<AnimalGearDraftedForceWearOnlyCarryTrainedEnabled_Title>Limit 'Force wear'-option to haul-trained</AnimalGearDraftedForceWearOnlyCarryTrainedEnabled_Title>
+	<AnimalGearDraftedForceWearOnlyCarryTrainedEnabled_Desc></AnimalGearDraftedForceWearOnlyCarryTrainedEnabled_Desc>
+	
+	<AG_Disabled>option disabled</AG_Disabled>
+	<AG_NotTrained>not trained in hauling</AG_NotTrained>
+	
+</LanguageData>

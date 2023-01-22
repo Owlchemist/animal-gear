@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+        <defName>Animal_Apparel</defName>
+        <label>Animal Apparel</label>
+        <parent>Apparel</parent>
+    </ThingCategoryDef>
+	
+</Defs>

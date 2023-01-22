@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			<!-- Add a groups where needed, where missing -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Bird" or 
+					defName="TurtleLike" or 
+					defName="Monkey" or 
+					defName="Snake" or 
+					contains(defName, "BeetleLike") or 
+					contains(defName, "QuadrupedAnimal")]//*[self::corePart or self::li][not(groups)][not(ancestor::groups)]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+			
+			<!-- Torso organs and bits -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Bird" or 
+					defName="TurtleLike" or 
+					defName="Monkey" or 
+					defName="Snake" or 
+					contains(defName, "BeetleLike") or 
+					contains(defName, "QuadrupedAnimal")]/corePart/parts//li[def="Spine" or 
+					def="Stomach" or 
+					def="Heart" or 
+					def="Lung" or 
+					def="LeftLung" or 
+					def="RightLung" or 
+					def="Kidney" or 
+					def="LeftKidney" or 
+					def="RightKidney" or 
+					def="Liver" or 
+					def="Elytra" or 
+					def="LeftElytra" or 
+					def="RightElytra" or 
+					def="InsectHeart" or 
+					def="Plastron" or 
+					def="Clavicle" or 
+					def="LeftClavicle" or 
+					def="RightClavicle" or 
+					def="Sternum" or 
+					def="Rib" or 
+					def="Pelvis"]/groups</xpath>
+				<value>
+					<li>Torso</li>
+				</value>
+			</li>
+			
+			<!-- Hips and dangles -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Bird" or 
+					contains(defName, "BeetleLike") or 
+					contains(defName, "QuadrupedAnimal") or 
+					defName="TurtleLike" or 
+					defName="Monkey" or 
+					defName="Snake"]/corePart/groups</xpath>
+				<value>
+					<li>Torso</li>
+					<li>Waist</li>
+				</value>
+			</li>
+			
+			<!-- Neck -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Bird" or 
+					contains(defName, "BeetleLike") or 
+					contains(defName, "QuadrupedAnimal") or 
+					defName="Monkey"]
+					/corePart/parts//li[def="Neck" or 
+					def="Pronotum"]/groups</xpath>
+				<value>
+					<li>Neck</li>
+				</value>
+			</li>
+			
+			<!-- Upper head parts -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Bird" or 
+					contains(defName, "BeetleLike") or 
+					contains(defName, "QuadrupedAnimal") or 
+					defName="TurtleLike" or 
+					defName="Monkey" or 
+					defName="Snake"]
+					/corePart/parts//li[def="Head" or 
+					def="InsectHead" or 
+					def="SnakeHead" or 
+					def="Skull" or 
+					def="Brain" or 
+					def="Antenna" or 
+					def="Ear"]/groups</xpath>
+				<value>
+					<li>UpperHead</li>
+					<li>FullHead</li>
+				</value>
+			</li>
+			
+			<!-- Lower head parts -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[contains(defName, "BeetleLike") or 
+					contains(defName, "QuadrupedAnimal") or 
+					defName="TurtleLike" or 
+					defName="Monkey" or 
+					defName="Snake"]
+					/corePart/parts//li[def="InsectNostril" or 
+					def="InsectMouth" or 
+					def="SnakeMouth" or 
+					def="HeadClaw" or 
+					def="Nose" or 
+					def="AnimalJaw" or 
+					def="Jowl"]/groups</xpath>
+				<value>
+					<li>FullHead</li>
+				</value>
+			</li>
+			
+			<!-- Beaks -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="TurtleLike"]/corePart/parts//li[def="TurtleBeak"]/groups</xpath>
+				<value>
+					<li>Beak</li>
+				</value>
+			</li>
+			
+			<!-- Eyes -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Bird" or 
+					contains(defName, "BeetleLike") or 
+					contains(defName, "QuadrupedAnimal") or 
+					defName="TurtleLike" or 
+					defName="Monkey" or 
+					defName="Snake"]/corePart/parts//li[def="Eye"]/groups</xpath>
+				<value>
+					<li>FullHead</li>
+					<li>Eyes</li>
+				</value>
+			</li>
+			
+			<!-- Legs for days -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Bird" or 
+					contains(defName, "BeetleLike") or 
+					contains(defName, "QuadrupedAnimal") or 
+					defName="TurtleLike" or 
+					defName="Monkey"]/corePart/parts//li[def="Leg" or 
+					def="InsectLeg" or 
+					def="Femur" or 
+					def="Tibia"]/groups</xpath>
+				<value>
+					<li>Legs</li>
+				</value>
+			</li>
+			
+			<!-- Front left leg -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Bird" or 
+					contains(defName, "BeetleLike") or 
+					contains(defName, "QuadrupedAnimal") or 
+					defName="TurtleLike"]/corePart/parts//li[customLabel="left leg" or customLabel="front left leg"]/groups[not(li[text()='FrontLeftLeg'])]</xpath>
+				<value>
+					<li>FrontLeftLeg</li>
+				</value>
+			</li>
+			
+			<!-- Front right leg -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Bird" or 
+					contains(defName, "BeetleLike") or 
+					contains(defName, "QuadrupedAnimal") or 
+					defName="TurtleLike"]/corePart/parts//li[customLabel="right leg" or customLabel="front right leg"]/groups[not(li[text()='FrontRightLeg'])]</xpath>
+				<value>
+					<li>FrontRightLeg</li>
+				</value>
+			</li>
+			
+			<!-- Shoulders -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Monkey"]/corePart/parts//li[def="Shoulder"]/groups</xpath>
+				<value>
+					<li>Shoulders</li>
+				</value>
+			</li>
+			
+			<!-- Teeth -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Snake"]/corePart/parts//li[def="SnakeMouth"]/groups</xpath>
+				<value>
+					<li>Teeth</li>
+				</value>
+			</li>
+			
+			<!-- Arms -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Monkey"]/corePart/parts//li[def="Arm" or def ="Humerus" or def ="Radius"]/groups</xpath>
+				<value>
+					<li>Arms</li>
+				</value>
+			</li>
+			
+			<!-- Hands and fingers -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Monkey"]/corePart/parts//li[def="Hand" or def="Finger"]/groups</xpath>
+				<value>
+					<li>Hands</li>
+				</value>
+			</li>
+			
+			<!-- Feet and toes -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="Monkey"]/corePart/parts//li[def="Foot" or def="FootLittleToe" or def="FootFourthToe" or def="FootMiddleToe" or def="FootSecondToe" or def="FootBigToe"]/groups</xpath>
+				<value>
+					<li>Feet</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Android tiers</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff" or defName="AndroidAnimalBird"]/corePart/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff" or defName="AndroidAnimalBird"]/corePart</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Android tiers</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff" or defName="AndroidAnimalBird"]/corePart/groups</xpath>
+				<value>
+					<li>Torso</li>
+					<li>Waist</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Android tiers</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff" or defName="AndroidAnimalBird"]//li[def="MechanicalNeck"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff" or defName="AndroidAnimalBird"]//li[def="MechanicalNeck"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Android tiers</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff" or defName="AndroidAnimalBird"]//li[def="MechanicalNeck"]/groups</xpath>
+				<value>
+					<li>Neck</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Android tiers</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff"]//li[def="CyberneticAnimalJaw"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff"]//li[def="CyberneticAnimalJaw"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Android tiers</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff"]//li[def="CyberneticAnimalJaw"]/groups</xpath>
+				<value>
+					<li>FullHead</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Android tiers</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalBird"]//li[def="Beak"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalBird"]//li[def="Beak"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Android tiers</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalBird"]//li[def="Beak"]/groups</xpath>
+				<value>
+					<li>FullHead</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Android tiers</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff"]//li[def="FrontRightMechanicalLeg"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff"]//li[def="FrontRightMechanicalLeg"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Android tiers</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff" or defName="AndroidAnimalBird"]//li[def="FrontRightMechanicalLeg" or def="RightMechanicalLeg"]/groups</xpath>
+				<value>
+					<li>FrontRightLeg</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff"]//li[def="FrontRightMechanicalLeg"]/groups</xpath>
+				<value>
+					<li>Legs</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Android tiers</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff"]//li[def="FrontLeftMechanicalLeg"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff"]//li[def="FrontLeftMechanicalLeg"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Android tiers</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff" or defName="AndroidAnimalBird"]//li[def="FrontLeftMechanicalLeg" or def="LeftMechanicalLeg"]/groups</xpath>
+				<value>
+					<li>FrontLeftLeg</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff"]//li[def="FrontLeftMechanicalLeg"]/groups</xpath>
+				<value>
+					<li>Legs</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Android tiers</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff"]//li[def="RearRightMechanicalLeg" or def="RearLeftMechanicalLeg"]/groups</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff"]//li[def="RearRightMechanicalLeg" or def="RearLeftMechanicalLeg"]</xpath>
+				<value>
+					<groups />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+                    <li>Android tiers</li>
+                </mods>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BodyDef[defName="AndroidAnimalDoggo" or defName="AndroidAnimalMuff"]//li[def="RearRightMechanicalLeg" or def="RearLeftMechanicalLeg"]/groups</xpath>
+				<value>
+					<li>Legs</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+</Patch>

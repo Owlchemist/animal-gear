@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>/Defs/PawnTableDef[defName="Animals"]/columns/li[last()-1]</xpath>
+		<value>
+			<li>Outfit</li>
+			<li>GapTiny</li>
+		</value>
+	</Operation>
+
+</Patch> 

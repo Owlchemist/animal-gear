@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Animal Gear</name>
+	<author>Dylan, Owlchemist</author>
+	<supportedVersions>
+		<li>1.4</li>
+	</supportedVersions>
+	<packageId>Dylan.AnimalGear</packageId>
+	<description>Version 1.4.0.0
+		
+		Makes it possible for animals to have "gear" / clothes like normal colonists. 
+		What they should wear can be set through outfits in the animal tab (like normal colonists).
+		
+		&lt;color=orange&gt;This mod only enables this to be possible, there are no clothes/gear for animals in this mod.&lt;/color&gt;\n
+		
+		Short tutorial: "How to make some clothes":
+		
+		- Get the mod "Animal Gear Basic" to have an example.
+		
+		- To get an item in the game, you only need the XML with the item-infos and the matching textures 
+		(a basic one for the item on the ground and 3 per animal)
+		- Important parts in the XML: 
+		
+		1. For which bodypart is this piece of clothing for example wolfs: "\AnimalGear\Helper\Bodies_Animal_Quadruped.xml_Info"
+		one item of clothing can only be for animals that all have this bodypart! 
+		(groups)
+        (li)Neck(/li)
+		(/groups)
+		and then in your XML:
+		(bodyPartGroups)
+        (li)Neck(/li)
+		(/bodyPartGroups)
+		
+		2. This defines that this is an item only for animals and which specific animals can use this item, 
+		in this case the timber and artic wolf (each needs a set of textures, even if they are in this case the same)
+		You can find the excact names in "\RimWorld\Mods\Core\Defs\ThingDefs_Races\" 
+		and in this case "Races_Animal_WildCanines.xml" (defName)WolfTimber(/defName)
+		(tags)
+        (li)Animal(/li)
+        (li)WolfArctic(/li)
+        (li)WolfTimber(/li)
+		...
+		(/tags)
+		
+		- There is a texture at "\Mods\AnimalGear\Helper\ItemName.png" 
+		that can be helpful to see how the item shows up on the animal or as a placeholder when testing
+		
+		- As animals don't have seperate head-textures, clothes have to be drawn different then for pawns
+		(see "dogscarf_Husky_front.png" for example)
+		
+		If you have different life-stage or female graphics defined, 
+		the mod looks for them first like this [normalDefName]_[lifeStageIndex]_female
+		for example "item_WolfTimber_0_back.png" instead of normally "item_WolfTimber_back.png" 
+		for the youngest version otherwise it uses the normal texture 
+		(you still need to define all 3 textures for this variant!)
+		
+	</description>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+</ModMetaData>
