@@ -13,25 +13,25 @@ using Verse.AI;
 
 namespace AnimalGear
 {
-	internal class AnimalGearHarmony
+	static class AnimalGearHarmony
 	{
 		public const string ModVersion = "v1.4.0.0",
-			ModNameGiddyUpCore = "Giddy-up! Core",
+			ModNameGiddyUp = "giddy-up 2",
 			ModNameAlphaAnimals = "Alpha Animals",
 			ModNameRPGStyleInventory = "RPG Style Inventory",
-			ModNameGiddyUpCoreDLL = "GiddyUpCore",
+			ModNameGiddyUpDLL = "GiddyUpCore",
 			ModNameRPGStyleInventoryDLL = "Sandy_Detailed_RPG_Inventory",
 			suffixToCheck = "_east";
-		public static bool ModGiddyUpCore_ON,
+		public static bool ModGiddyUp_ON,
 			ModAlphaAnimals_ON,
 			ModRPGStyleInventory_ON,
-			ModGiddyUpCore_GiddyUpCore_CompOverlayFound,
+			ModGiddyUp_GiddyUp_CompOverlayFound,
 			ModRPGStyleInventory_RPG_GearTabFound,
 			ModRPGStyleInventory_HumanlikePatched,
 			ModRPGStyleInventory_FillTabPatched;
 
-		public static Type ModGiddyUpCore_GiddyUpCore_CompOverlay, ModRPGStyleInventory_RPG_GearTab;
-		public static int ModGiddyUpCore_Patched, ModRPGStyleInventory_Patched;
+		public static Type ModGiddyUp_GiddyUp_CompOverlay, ModRPGStyleInventory_RPG_GearTab;
+		public static int ModGiddyUp_Patched, ModRPGStyleInventory_Patched;
 
 		[HarmonyPatch(typeof(PawnComponentsUtility), nameof(PawnComponentsUtility.CreateInitialComponents))]
 		public static class PawnComponentsUtility_CreateInitialComponents_Patch
@@ -856,14 +856,14 @@ namespace AnimalGear
 			{
 				if (Prefs.DevMode)
 				{
-					Log.Message("AnimalGear("+ModVersion+"): Active Mods: "+ModNameGiddyUpCore+": " + AnimalGearHarmony.ModGiddyUpCore_ON.ToString() + 
-						"(P:" + AnimalGearHarmony.ModGiddyUpCore_Patched + ") "+ModNameRPGStyleInventory+": " + AnimalGearHarmony.ModRPGStyleInventory_ON.ToString() + 
-						"(P:" + AnimalGearHarmony.ModRPGStyleInventory_Patched + " Option:" + ((AnimalGearSettings.AnimalGearRPGInventoryAnimalCompatibilityEnabled) ? 
+					Log.Message("AnimalGear("+ModVersion+"): Active Mods: "+ModNameGiddyUp+": " + ModGiddyUp_ON.ToString() + 
+						"(P:" + ModGiddyUp_Patched + ") "+ModNameRPGStyleInventory+": " + ModRPGStyleInventory_ON.ToString() + 
+						"(P:" + ModRPGStyleInventory_Patched + " Option:" + ((AnimalGearSettings.AnimalGearRPGInventoryAnimalCompatibilityEnabled) ? 
 						
-						(AnimalGearSettings.AnimalGearRPGInventoryAnimalCompatibilityEnabled).ToString() : "null") + ") "+ModNameAlphaAnimals+": " + AnimalGearHarmony.ModAlphaAnimals_ON.ToString());
+						(AnimalGearSettings.AnimalGearRPGInventoryAnimalCompatibilityEnabled).ToString() : "null") + ") "+ModNameAlphaAnimals+": " + ModAlphaAnimals_ON.ToString());
 				}
 				
-				AnimalGearHarmony.FloatMenuMakerMap_AddDraftedOrders_Patch.cachedTrainableDefHaul = DefDatabase<TrainableDef>.GetNamed("Haul", errorOnFail: false);
+				FloatMenuMakerMap_AddDraftedOrders_Patch.cachedTrainableDefHaul = DefDatabase<TrainableDef>.GetNamed("Haul", errorOnFail: false);
 				
 				
 				if (__instance == null || __instance.mapPawns == null)
@@ -1095,39 +1095,74 @@ namespace AnimalGear
 		}
 
 		[HarmonyPatch]
-		public static class GiddyUpCore_CompOverlay_PostDraw_Transpiler_Patch
+		static class GiddyUp_CompOverlay_PostDraw_Transpiler_Patch
 		{
+			static MethodBase target;
 			static bool Prepare()
 			{
-				return AnimalGearHarmony.ModGiddyUpCore_ON && AnimalGearHarmony.ModGiddyUpCore_GiddyUpCore_CompOverlayFound;
+				var type = AccessTools.TypeByName("GiddyUp.CompOverlay");
+				if (type == null) return false;
+				target = AccessTools.Method(type, "PostDraw");
+				if (target == null) return false;
+				return true;
+			}
+			static MethodBase TargetMethod()
+			{
+				return target;
 			}
 			public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
 			{
-				bool flag = false;
-				List<CodeInstruction> list = new List<CodeInstruction>(instructions);
-				for (int i = 0; i < list.Count; i++)
+				AnimalGearHarmony.ModGiddyUp_Patched++;
+				return instructions.MethodReplacer(AccessTools.Method(typeof(Graphic), nameof(Graphic.Draw)),
+				AccessTools.Method(typeof(AnimalGearHarmony), nameof(DrawCompOverlay)));
+			}
+		}
+
+		public static void DrawCompOverlay(this Graphic graphic, Vector3 loc, Rot4 rot, Thing thing, float extraRotation)
+		{
+			bool flag = false;
+			Pawn pawn;
+			
+			pawn = (Pawn)thing;
+			if (pawn.apparel != null && pawn.apparel.WornApparelCount > 0)
+			{
+				for (int i = 0; i < pawn.apparel.WornApparel.Count; i++)
 				{
-					if (list[i].opcode == OpCodes.Ldloc_3 && i + 1 < list.Count && list[i + 1].opcode == OpCodes.Callvirt && list[i + 1].operand.ToString().EndsWith("get_Graphic()") && i + 9 < list.Count && list[i + 9].opcode == OpCodes.Callvirt && list[i + 9].operand.ToString().Contains("Draw"))
+					
+					Apparel apparel = pawn.apparel.WornApparel[i];
+					if (apparel.def.apparel.tags != null && apparel.def.apparel.tags.Contains("AnimalHideGiddyUpOverlay"))
 					{
-						list[i + 9].opcode = OpCodes.Call;
-						list[i + 9].operand = AccessTools.Method(typeof(AnimalGearHarmony.GiddyUpCore_CompOverlay_PostDraw_Transpiler_Patch), "DrawCompOverlay", null, null);
 						flag = true;
-						break;
 					}
 				}
-				if (flag)
+			}
+			
+			if (!flag) graphic.Draw(loc, rot, thing, extraRotation);
+			pawn = (Pawn)thing;
+			if (pawn.apparel != null && pawn.apparel.WornApparelCount > 0 && pawn.Drawer != null && pawn.Drawer.renderer != null && pawn.Drawer.renderer.graphics != null)
+			{
+				List<ApparelGraphicRecord> apparelGraphics = pawn.Drawer.renderer.graphics.apparelGraphics;
+				Vector3 loc2 = new Vector3(loc.x, loc.y + 0.046875f, loc.z);
+				for (int j = 0; j < apparelGraphics.Count; j++)
 				{
-					if (Prefs.DevMode)
+					Apparel sourceApparel = apparelGraphics[j].sourceApparel;
+					if (sourceApparel.def.apparel.tags != null && sourceApparel.def.apparel.tags.Contains("AnimalDrawOverGiddyUpOverlay"))
 					{
-						Log.Message("AnimalGear: Transpiler(GiddyUpCore.CompOverlay.PostDraw()): Patched!");
+						Quaternion quat = Quaternion.AngleAxis(extraRotation, Vector3.up);
+						ApparelGraphicRecord apparelGraphicRecord = apparelGraphics[j];
+						bool flag2 = false;
+						Mesh mesh = (!pawn.RaceProps.Humanlike) ? pawn.Drawer.renderer.graphics.nakedGraphic.MeshAt(rot) : MeshPool.humanlikeBodySet.MeshAt(rot);
+						Material mat = OverrideMaterialIfNeededAnimal(pawn.Drawer.renderer, apparelGraphicRecord.graphic.MatAt(rot, null), pawn, flag2);
+						GenDraw.DrawMeshNowOrLater(mesh, loc2, quat, mat, flag2);
+						loc2.y += 0.0030612245f;
 					}
 				}
-				else if (Prefs.DevMode)
-				{
-					Log.Error("AnimalGear: Transpiler(GiddyUpCore.CompOverlay.PostDraw()): Not patched! (maybe GiddyUp changed? Gear might look strange for some animals!)");
-				}
-				AnimalGearHarmony.ModGiddyUpCore_Patched++;
-				return list.AsEnumerable<CodeInstruction>();
+			}
+
+			Material OverrideMaterialIfNeededAnimal(PawnRenderer renderer, Material original, Pawn pawn, bool portrait = false)
+			{
+				Material baseMat = (!portrait && pawn.IsInvisible()) ? InvisibilityMatPool.GetInvisibleMat(original) : original;
+				return renderer.graphics.flasher.GetDamagedMat(baseMat);
 			}
 		}
 
@@ -1365,11 +1400,11 @@ namespace AnimalGear
 				for (int i = 0; i < length; i++)
 				{
                 	string name = list[i].Name?.ToLower() ?? "NULL";
-                	if (name.StartsWith(ModNameGiddyUpCore))
+                	if (name.StartsWith(ModNameGiddyUp))
                 	{
-						ModGiddyUpCore_ON = true;
-						ModGiddyUpCore_GiddyUpCore_CompOverlay = AccessTools.TypeByName("GiddyUpCore.CompOverlay");
-						ModGiddyUpCore_GiddyUpCore_CompOverlayFound = ModGiddyUpCore_GiddyUpCore_CompOverlay == null ? false : true;
+						ModGiddyUp_ON = true;
+						ModGiddyUp_GiddyUp_CompOverlay = AccessTools.TypeByName("GiddyUp.CompOverlay");
+						ModGiddyUp_GiddyUp_CompOverlayFound = ModGiddyUp_GiddyUp_CompOverlay == null ? false : true;
 					}
 					else if (name.StartsWith(ModNameAlphaAnimals))
                 	{
@@ -1378,7 +1413,7 @@ namespace AnimalGear
 					else if (name.StartsWith(ModNameRPGStyleInventory))
                 	{
 						ModRPGStyleInventory_ON = true;
-						ModRPGStyleInventory_RPG_GearTab = AccessTools.TypeByName("Sandy_Detailed_RPG_Inventory.Sandy_Detailed_RPG_GearTab");
+						ModRPGStyleInventory_RPG_GearTab = AccessTools.TypeByName(ModNameRPGStyleInventoryDLL + ".Sandy_Detailed_RPG_GearTab");
 						ModRPGStyleInventory_RPG_GearTabFound = ModRPGStyleInventory_RPG_GearTab == null ? false : true;
 					}
 				}
